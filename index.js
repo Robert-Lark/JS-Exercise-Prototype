@@ -80,6 +80,7 @@ function Person(name, age) {
 */
 
 
+
 function Car(model, milesPerGallon) {
   this.model = model;
   this.milesPerGallon = milesPerGallon;
@@ -87,8 +88,8 @@ function Car(model, milesPerGallon) {
   this.odometer = 0;
 }
 
-Car.prototype.fueled = function (gallons) {
-  return this.tank + gallons;
+Car.prototype.fill = function fill(gallons) {
+  return (this.tank += gallons);
 };
 
 /*
