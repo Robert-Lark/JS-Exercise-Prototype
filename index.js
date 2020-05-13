@@ -91,6 +91,16 @@ function Car(model, milesPerGallon) {
 Car.prototype.fill = function fill(gallons) {
   return (this.tank += gallons);
 };
+this.fill(10);
+
+
+Car.prototype.drive = function drive(distance) {
+  this.odometer += distance;
+  let tripGallons = distance / this.milesPerGallon;
+  this.tank - tripGallons;
+  return this.odometer && this.tank;
+};
+this.drive(100);
 
 /*
   TASK 3
@@ -114,10 +124,14 @@ Baby.prototype.play = function() {
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1.GLOBAL CONTEXT: when in global scope the value of this will be the window/console object: you will see code that describes the terminal.
+
+2. IMPLICIT BINDING Whenever a function/method is called by a preceding dot, the object left of the dot gets ‘this’.
+
+3. NEW BINDING:Whenever a constructor function is used ‘this’ refers to the specific instance of the object that is created and returned by the constructor function.
+
+4. EXPLICIT BINDING: Whenever JavaScripts call or apply method is used, this is explicitly defined. 
+
 */
 
 
